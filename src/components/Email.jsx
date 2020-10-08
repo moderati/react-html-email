@@ -12,6 +12,10 @@ export default function Email(props) {
       <head>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {props.supportsDarkMode && <React.Fragment>
+          <meta name="color-scheme" content="light dark">
+          <meta name="supported-color-schemes" content="light dark">
+        </React.Fragment>}
         <title>{props.title}</title>
         {props.headCSS && <style type="text/css">{props.headCSS}</style>}
       </head>
@@ -45,6 +49,7 @@ Email.propTypes = {
   cellSpacing: PropTypes.number,
   style: EmailPropTypes.style,
   headCSS: PropTypes.string,
+  supportsDarkMode: PropTypes.bool,
   width: PropTypes.string,
   align: PropTypes.oneOf(['left', 'center', 'right']),
   valign: PropTypes.oneOf(['top', 'middle', 'bottom']),
@@ -62,6 +67,7 @@ Email.defaultProps = {
   cellSpacing: undefined,
   style: undefined,
   headCSS: undefined,
+  supportsDarkMode: false,
   bodyStyle: undefined,
   children: undefined,
 }
