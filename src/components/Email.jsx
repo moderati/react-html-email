@@ -13,8 +13,8 @@ export default function Email(props) {
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {props.supportsDarkMode && <React.Fragment>
-          <meta name="color-scheme" content="light dark">
-          <meta name="supported-color-schemes" content="light dark">
+          <meta name="color-scheme" content="light dark" />
+          <meta name="supported-color-schemes" content="light dark" />
         </React.Fragment>}
         <title>{props.title}</title>
         {props.headCSS && <style type="text/css">{props.headCSS}</style>}
